@@ -12,7 +12,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=production pm2 start index.js --node-args='--harmony' --name 'node-elm'",
     "stop": "cross-env NODE_ENV=production pm2 stop index.js --name 'node-elm'",
-    "restart": "cross-env NODE_ENV=production pm2 restart index.js --node-args='--harmony' --name 'node-elm'"
+    "restart": "cross-env NODE_ENV=production pm2 restart index.js --node-args='--harmony' --name 'node-elm'",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -50,12 +52,14 @@
     "supervisor": "^0.12.0",
     "time-formater": "^1.0.1",
     "time-stamp": "^2.0.0",
-    "winston": "^2.3.1"
+    "winston": "^2.3.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-es2015-classes": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0"
-  }
+  },
+  "snyk": true
 }
